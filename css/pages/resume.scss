@@ -1,0 +1,65 @@
+@import 'layout/base';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'components/button';
+@import 'vendor/bootstrap/variables';
+
+#resume {
+    margin-top: 2rem;
+
+    #resume-title {
+        margin: 0;
+        font-size: 3.1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        line-height: 5rem;
+        
+        span:first-child {
+            color: black;
+        }
+        span:last-child {
+            color: $resume_blue;
+        }
+    }
+
+    .resume-divider {
+        height: 0;
+        display: none;
+        border-bottom: 1px $light_gray dashed;
+    }
+
+    .col-xs-12 {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        padding-left: 1.75rem;
+    }
+
+    hr {
+        height: 2rem;
+        border: none;
+    }
+}
+
+@media (min-width: $screen-sm) {
+    #resume {
+        #resume-title {
+            margin-bottom: 1.5rem;
+            font-size: 3.45rem;
+        }
+
+        .resume-divider {
+            display: block;
+        }
+
+        address {
+            br {
+                display: none;
+            }
+        }
+    }
+}

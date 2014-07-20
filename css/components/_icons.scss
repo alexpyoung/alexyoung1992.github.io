@@ -1,0 +1,35 @@
+// _icons.scss
+
+.icon {
+    &.icon-about {
+        img {        
+            position: relative;
+            top: 1.75rem;
+            left: 2.25rem;
+        }
+    }
+
+    &.icon-portfolio {
+        img {
+            position: relative;
+            top: 1.75rem;
+            left: 2.5rem;
+        }
+    }
+
+    &.icon-contact {
+        img {
+            position: relative;
+            top: 2rem;
+            left: 2.5rem;
+        }
+    }
+
+    &.icon-resume {
+        img {
+            position: relative;
+            top: 2rem;
+            left: 2.75rem;
+        }
+    }
+}

@@ -1,0 +1,406 @@
+body {
+  font-size: 10px;
+  font-family: 'Lato', sans-serif;
+  line-height: 3rem; }
+
+h1 {
+  padding-left: 1.5rem;
+  margin-top: 3rem;
+  margin-bottom: 0;
+  font-family: 'ChunkFive', serif;
+  font-size: 4rem;
+  text-transform: lowercase; }
+
+h2 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  font-family: 'Arvo', serif;
+  font-size: 2.4rem;
+  text-align: center; }
+
+h4:before, h4:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  border: 5px solid #3c85c5; }
+
+h4 {
+  position: relative;
+  margin: 2rem 0;
+  background-color: #3c85c5;
+  color: white;
+  font-family: 'Arvo', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 5rem;
+  text-align: center;
+  text-transform: uppercase; }
+  h4:before {
+    left: -1rem; }
+  h4:after {
+    right: -1rem; }
+
+.container-fluid.container-alt {
+  box-shadow: 0 0 0.6rem 0 rgba(136, 136, 136, 0.5) inset;
+  background-color: #eeeeee; }
+
+[class*="col-xs"] {
+  margin-top: 3rem;
+  margin-bottom: 3rem; }
+
+.col-centered {
+  margin-left: auto;
+  margin-right: auto;
+  float: none; }
+
+.container {
+  padding: 0rem 1rem;
+  font-size: 1.6rem; }
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.8rem; }
+
+  h2 {
+    font-size: 3rem; }
+
+  h4 {
+    margin: 0;
+    background-color: transparent;
+    color: #3c85c5;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: left;
+    text-transform: none;
+    line-height: 3rem; }
+    h4:before, h4:after {
+      content: none; } }
+@media (min-width: 992px) {
+  h1 {
+    margin-top: 5rem;
+    padding-left: 9rem;
+    font-size: 5.2rem; }
+
+  h2 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-size: 3.6rem; }
+
+  [class*="col-xs"] {
+    margin-top: 5rem;
+    margin-bottom: 5rem; } }
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 7.2rem; } }
+nav {
+  background-color: #222222; }
+  nav .nav-header {
+    position: relative;
+    height: 5rem; }
+    nav .nav-header .logo {
+      width: 3.5rem;
+      height: 3.5rem;
+      margin-top: 1.5rem; }
+      nav .nav-header .logo img {
+        width: 100%;
+        height: 100%; }
+    nav .nav-header .nav-toggle {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 70%;
+      width: 4rem;
+      padding: 0;
+      background: url("../../img/menu-icon.png") #222222 no-repeat 0.5rem;
+      border: none; }
+  nav ul.nav-list {
+    margin: 0;
+    padding: 0;
+    background-color: #333333;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    list-style-type: none; }
+    nav ul.nav-list li {
+      border-top: 0.1rem solid #222222;
+      padding: 1.5rem 0;
+      text-align: center; }
+      nav ul.nav-list li a {
+        color: white; }
+        nav ul.nav-list li a:hover, nav ul.nav-list li a:active {
+          text-decoration: none;
+          transition: all 0.3s; }
+          nav ul.nav-list li a:hover#about-nav, nav ul.nav-list li a:active#about-nav {
+            color: #e95065; }
+          nav ul.nav-list li a:hover#portfolio-nav, nav ul.nav-list li a:active#portfolio-nav {
+            color: #52d273; }
+          nav ul.nav-list li a:hover#resume-nav, nav ul.nav-list li a:active#resume-nav {
+            color: #46bddf; }
+          nav ul.nav-list li a:hover#blog-nav, nav ul.nav-list li a:active#blog-nav {
+            color: #e5c453; }
+          nav ul.nav-list li a:hover#contact-nav, nav ul.nav-list li a:active#contact-nav {
+            color: #e57255; }
+
+@media (min-width: 768px) {
+  nav .nav-header {
+    display: inline-block;
+    height: 10rem; }
+    nav .nav-header .logo {
+      width: 7rem;
+      height: 7rem;
+      margin-top: 1.5rem; }
+    nav .nav-header .nav-toggle {
+      display: none; }
+  nav .nav-collapse {
+    display: block;
+    margin-top: -8rem;
+    padding-bottom: 2rem; }
+    nav .nav-collapse ul.nav-list {
+      width: 614px;
+      margin: 0 auto;
+      margin-right: 0;
+      background-color: #222222; }
+      nav .nav-collapse ul.nav-list li {
+        display: inline-block;
+        margin: 0 2.5rem; } }
+@media (min-width: 992px) {
+  nav .nav-collapse ul.nav-list {
+    margin-right: auto; } }
+footer {
+  height: 8rem;
+  background-color: #222222;
+  font-size: 1.7rem;
+  text-align: center; }
+  footer ul.nav-list {
+    display: none;
+    width: 514px;
+    margin: 0 auto;
+    padding: 3rem 0 1.5rem 0;
+    font-weight: 700;
+    text-transform: uppercase;
+    list-style-type: none; }
+    footer ul.nav-list li {
+      display: inline-block;
+      padding: 0 1.5rem; }
+  footer .copyright {
+    padding-top: 2.5rem;
+    color: white; }
+
+@media (min-width: 60rem) {
+  footer {
+    height: 15rem; }
+    footer ul.nav-list {
+      display: block; }
+    footer .copyright {
+      padding-top: 1.5rem; } }
+/* Designed to work with the following markup:
+ *
+ * <div class="item-list">
+ *     <figure class="item">
+ *         <div class="figimage">
+ *             <img src="..." alt="..." />
+ *         </div>
+ *         <figcaption>...</figcaption>
+ *     </figure>
+ * </div>
+ *
+ */
+.item-list figure.item {
+  margin-top: 0;
+  padding: 1rem;
+  box-shadow: 0.1rem 0.1rem 0.5rem 0 #b3b8bc;
+  background-color: #eeeeee; }
+  .item-list figure.item:hover, .item-list figure.item:active {
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 #656565;
+    transition: all 0.3s; }
+  .item-list figure.item div.figimage {
+    /* Responsive parent image container */
+    width: 100%;
+    height: 20rem;
+    overflow-y: hidden;
+    margin-bottom: 1rem; }
+    .item-list figure.item div.figimage img {
+      height: auto;
+      width: 100%; }
+  .item-list figure.item figcaption {
+    margin-left: 1rem;
+    font-size: 1.4rem;
+    line-height: 2.8rem; }
+    .item-list figure.item figcaption:first-line {
+      font-size: 1.7rem;
+      font-weight: 700; }
+
+@media (min-width: 768px) {
+  h1 {
+    font-size: 4.8rem; }
+
+  h2 {
+    font-size: 3rem; }
+
+  h4 {
+    margin: 0;
+    background-color: transparent;
+    color: #3c85c5;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: left;
+    text-transform: none;
+    line-height: 3rem; }
+    h4:before, h4:after {
+      content: none; } }
+@media (min-width: 992px) {
+  h1 {
+    margin-top: 5rem;
+    padding-left: 9rem;
+    font-size: 5.2rem; }
+
+  h2 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    font-size: 3.6rem; }
+
+  [class*="col-xs"] {
+    margin-top: 5rem;
+    margin-bottom: 5rem; } }
+@media (min-width: 1200px) {
+  h1 {
+    font-size: 7.2rem; } }
+/* Designed to work with the following markup:
+ * 
+ * <div class="tweet-list">
+ *     <div class="tweet">
+ *         <p class="quote">    
+ *             ...
+ *         </p>
+ *         <p class="info">
+ *             <span class="pull-left">
+ *                 <a href="#">View on Twitter</a>
+ *             </span>
+ *             <span class="pull-right">
+ *                 1 hour ago
+ *             </span>
+ *         </p>
+ *     </div>
+ * </div>
+ *
+ */
+.tweet {
+  height: 13rem;
+  padding: 1rem 1.5rem;
+  margin-top: 0;
+  border-bottom: 5px solid #888888;
+  box-shadow: 0.1rem 0.1rem 0.5rem 0 #b3b8bc;
+  background: white;
+  color: #656565;
+  font-size: 1.4rem;
+  line-height: 2.4rem; }
+  .tweet:hover, .tweet:active {
+    box-shadow: 0.1rem 0.1rem 0.5rem 0 #656565;
+    transition: all 0.3s; }
+  .tweet .quote {
+    font-style: italic; }
+  .tweet .info {
+    font-size: 1.2rem; }
+
+.icon.icon-about img {
+  position: relative;
+  top: 1.75rem;
+  left: 2.25rem; }
+.icon.icon-portfolio img {
+  position: relative;
+  top: 1.75rem;
+  left: 2.5rem; }
+.icon.icon-contact img {
+  position: relative;
+  top: 2rem;
+  left: 2.5rem; }
+.icon.icon-resume img {
+  position: relative;
+  top: 2rem;
+  left: 2.75rem; }
+
+/* Designed to work with the following markup:
+ * 
+ * <div class="button">
+ *     <div class="icon">
+ *         <img src="..." />
+ *     </div>
+ *     <button>...</button>
+ * </div>
+ * 
+ */
+.button, .button-red, .button-orange, .button-yellow, .button-green, .button-blue {
+  height: 7rem;
+  display: inline-block;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 5px solid #b3b8bc;
+  background-color: #888888;
+  color: white;
+  font-size: 1.7rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+  .button .icon, .button-red .icon, .button-orange .icon, .button-yellow .icon, .button-green .icon, .button-blue .icon {
+    height: 6.5rem;
+    width: 7rem;
+    background-color: #b3b8bc; }
+  .button button, .button-red button, .button-orange button, .button-yellow button, .button-green button, .button-blue button {
+    position: relative;
+    left: 3.5rem;
+    bottom: 6.5rem;
+    display: block;
+    margin: 1.7rem auto;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    text-transform: uppercase; }
+
+.button-red {
+  border-bottom-color: #b80019;
+  background-color: #e95065; }
+  .button-red .icon {
+    background-color: #b80019; }
+
+.button-orange {
+  border-bottom-color: #be4419;
+  background-color: #e57255; }
+  .button-orange .icon {
+    background-color: #be4419; }
+
+.button-yellow {
+  border-bottom-color: #d5a500;
+  background-color: #e5c453; }
+  .button-yellow .icon {
+    background-color: #d5a500; }
+
+.button-green {
+  border-bottom-color: #2a9856;
+  background-color: #52d273; }
+  .button-green .icon {
+    background-color: #2a9856; }
+
+.button-blue {
+  border-bottom-color: #0b82a4;
+  background-color: #46bddf; }
+  .button-blue .icon {
+    background-color: #0b82a4; }
+
+.hero {
+  margin-bottom: 0;
+  padding: 0; }
+  .hero img {
+    height: 100%;
+    width: 100%; }
+
+.prev-btn, .next-btn {
+  display: none; }
+
+.tweet-list .tweet {
+  margin-left: 1rem;
+  margin-right: 1rem; }
+  .tweet-list .tweet:first-child, .tweet-list .tweet:nth-child(3) {
+    margin-left: 0; }
+  .tweet-list .tweet:nth-child(2), .tweet-list .tweet:last-child {
+    margin-right: 0; }

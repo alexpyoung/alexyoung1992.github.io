@@ -1,0 +1,242 @@
+@import 'layout/base';
+@import 'layout/header';
+@import 'layout/footer';
+@import 'components/button';
+@import 'vendor/bootstrap/variables';
+
+.blurbs {
+    margin-top: 0;
+}
+
+.tagline, .bio, .avatar {
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
+.tagline {
+    font-size: 1.8rem;
+}
+
+.avatar {
+    margin-left: 6%;
+    
+    img {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@mixin skill-background($url, $xpos) {
+    background: url('../../img/skills/'+$url) white no-repeat $xpos;
+}
+
+ul.skill-list {
+    width: 21rem;
+    margin: 10rem auto -4rem;
+    padding: 0;
+    list-style-type: none;
+
+    li.skill {
+        // @include box-shadow($light_gray);
+        color: white;
+        font-size: 5rem;
+
+        &#html {
+            @include skill-background('html.png', 5rem);
+        }
+        &#css {
+            @include skill-background('css.png', 7rem);
+        }
+        &#javascript {
+            @include skill-background('javascript.png', 2rem);
+        }
+        &#bootstrap {
+            @include skill-background('bootstrap.png', 2rem);
+        }
+        &#jquery {
+            @include skill-background('jquery.png', 3rem);
+        }
+        &#angularjs {
+            @include skill-background('angularjs.png', 2rem);
+        }
+        &#rails {
+            @include skill-background('rails.png', 5rem);
+        }
+        &#sass {
+            @include skill-background('sass.png', 6rem);
+        }
+        &#ruby {
+            @include skill-background('ruby.png', 5.5rem);
+        }
+        &#java {
+            @include skill-background('java.png', 6rem);
+        }
+    }
+}
+
+.hex {
+    margin-bottom: 13rem;
+    width: 20.8rem;
+    height: 12rem;
+    background-color: white;
+    position: relative;
+    display: inline-block;
+    margin-right: 2rem;
+}
+
+.hex:before, .hex:after {
+    content: "";
+    position: absolute;
+    width: 0; 
+    border-left: 10.4rem solid transparent;
+    border-right: 10.4rem solid transparent;
+}
+
+.hex:before {
+    top: -6rem;
+    height: 0;
+    border-bottom: 6rem solid white;
+}
+
+.hex:after {
+    bottom: -6rem;
+    border-top: 6rem solid white;
+}
+
+.fact-hero {
+    margin-top: 0;
+
+    img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.fact-list {
+    display: inline-block;
+    margin-top: 0;
+}
+
+@media (min-width: 519px) and (max-width: 749px) {
+    ul.skill-list {
+        width: 439px;
+        margin-top: 15rem;
+    }
+
+    .hex {
+        margin-top: -6rem;
+    
+        &:nth-of-type(3n+1) { // Every hex in odd row
+            margin-left: 11.5rem;
+            margin-right: 100%;
+        }
+        &:nth-of-type(3n) { // End of every even row
+            margin-right: 0;
+        }
+    }
+}
+
+@media (min-width: 750px) and (max-width: 1199px) {
+    ul.skill-list {
+        width: 670px;
+        margin-bottom: 3rem;
+    }
+
+    .hex {
+        margin-bottom: 7rem;
+
+        &:nth-of-type(5n+1) { // First of every even row
+            margin-left: 11.5rem;
+        }
+        &:nth-of-type(5n+2) { // Last of every even row
+            margin-right: 17%;
+        }
+        &:nth-of-type(5n) { // Last of every odd row
+            margin-right: 0;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    ul.skill-list {
+        width: 901px;
+        margin-bottom: 3rem;
+    }
+
+    .hex {
+        margin-bottom: 7rem;    
+        
+        &:nth-of-type(7n) { // Last of every even row
+            margin-right: 0;
+        }
+        &:nth-of-type(7n+1) { // First of every odd row
+            margin-left: 11.5rem;
+        }
+        &:nth-of-type(7n+3) {
+            margin-right: 10rem;
+        }
+    }
+}
+
+
+@media (min-width: $screen-xs) and (max-width: $screen-sm) {
+    .fact-list {
+        padding-left: 3rem;
+        padding-right: 3rem;
+    }
+}
+
+@media (min-width: $screen-sm) {
+    .avatar {
+        margin-left: 0;
+    }
+
+    .fact-list {
+        // position: relative;
+        margin-top: -41rem;
+        // left: 0;
+    }
+
+    .fact-hero {
+        // position: relative;
+        margin-top: 9rem;
+    }
+
+    .avatar {
+        // position: relative;
+        margin-top: 4.2rem;
+    }
+}
+
+@media (min-width: $screen-md) {
+    .fact-list {
+        margin-top: -44rem;
+        // left: 0;
+    }
+
+    .fact-hero {
+        margin-top: 0;
+    }
+
+    .avatar {
+        // top: 0;
+    }
+
+    .tagline, .bio {
+        padding-left: 7.5rem;
+    }
+}
+
+@media (min-width: $screen-lg) {
+    .fact-list {
+        margin-top: -51rem;
+    }
+
+    .fact-hero {
+        margin-top: 0;
+    }
+
+    .avatar {
+        margin-top: -6rem;
+    }
+}

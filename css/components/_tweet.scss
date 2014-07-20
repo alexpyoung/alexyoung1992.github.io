@@ -1,0 +1,44 @@
+// _tweet.scss
+
+@import 'layout/base';
+
+/* Designed to work with the following markup:
+ * 
+ * <div class="tweet-list">
+ *     <div class="tweet">
+ *         <p class="quote">    
+ *             ...
+ *         </p>
+ *         <p class="info">
+ *             <span class="pull-left">
+ *                 <a href="#">View on Twitter</a>
+ *             </span>
+ *             <span class="pull-right">
+ *                 1 hour ago
+ *             </span>
+ *         </p>
+ *     </div>
+ * </div>
+ *
+ */
+
+.tweet {
+    height: 13rem;
+    padding: 1rem 1.5rem;
+    margin-top: 0;
+    border-bottom: 5px solid $mid_gray;
+    @include box-shadow($light_gray);
+    background: white;
+    color: $dark_gray;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    @include box-shadow-hover($dark_gray);
+
+    .quote {
+        font-style: italic; 
+    }
+
+    .info {
+        font-size: 1.2rem;
+    }
+}

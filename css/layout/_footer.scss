@@ -1,0 +1,43 @@
+// _footer.scss
+
+@import 'utils/colors';
+
+footer {
+    height: 8rem;
+    background-color: $black_gray;
+    font-size: 1.7rem;
+    text-align: center;
+
+    ul.nav-list {
+        display: none;
+        width: 514px; // Fixed with for h-center
+        margin: 0 auto; // Horizontal center
+        padding: 3rem 0 1.5rem 0; // Reset default styling, vertical center
+        font-weight: 700;
+        text-transform: uppercase;
+        list-style-type: none;
+        
+        li {
+            display: inline-block;
+            padding: 0 1.5rem;
+        }
+    }
+    .copyright {
+        padding-top: 2.5rem; // Vertical center  
+        color: white;       
+    }
+}
+
+@media (min-width: 60rem) {
+    footer {
+        height: 15rem;
+
+        ul.nav-list {
+            display: block;
+        }
+
+        .copyright {
+            padding-top: 1.5rem;
+        }
+    }
+}
