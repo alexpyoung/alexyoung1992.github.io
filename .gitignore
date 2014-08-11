@@ -3,7 +3,7 @@
 .gitignore.swp
 
 # To-Do List
-todo.text
+todo.txt
 
 # SASS cache
 css/.sass-cache/*
