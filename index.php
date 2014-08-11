@@ -6,7 +6,6 @@
     </div>    
 </div>
 <div class="container-fluid container-alt">
-    <div class="container">
         <h2 class="center">Some of my recent projects and work</h2>
         <div class="item-list">
             <?php 
@@ -23,7 +22,6 @@
                 }
             ?>
         </div>
-    </div>
 </div>
 
 <div class="container">
