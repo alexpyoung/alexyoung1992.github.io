@@ -2,6 +2,9 @@
 
 .gitignore.swp
 
+# Resume file
+*.pdf
+
 # To-Do List
 todo.txt
 
