@@ -1,2 +1,7 @@
-**/.sass-cache/*
+## .gitignore for alexyoung1992/alexyoung1992.github.io
 
+# SASS cache
+css/.sass-cache/*
+
+# Compiled SASS files
+css/pages/*.css
