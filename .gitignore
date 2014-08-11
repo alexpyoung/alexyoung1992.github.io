@@ -7,3 +7,6 @@ css/.sass-cache/*
 
 # Compiled SASS files
 css/pages/*.css
+
+# Google Engine files
+*.yaml
