@@ -1,113 +1,51 @@
-<?php require '_header.php'; ?>
+<?php require 'partials/_header.php'; ?>
 
 <div class="container">
-    <div class="hero col-xs-12 col-sm-10 col-centered">
-        <img src="img/imac@2x.jpg" alt="iMac" />
+    <div class="hero col-xs-12 col-sm-10 col-sm-offset-1">
+        <img src="img/imac-hero.jpg" alt="iMac Hero" />
     </div>    
 </div>
 <div class="container-fluid container-alt">
     <div class="container">
-        <h2>Some of my recent projects and work</h2>
+        <h2 class="center">Some of my recent projects and work</h2>
         <div class="item-list">
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="img/clipmunk.png" alt="Clipmunk" />
-                </div>
-                <figcaption>
-                    Clipmunk<br/>
-                    Web Design & Development
-                </figcaption>
-            </figure>
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="img/caveman.png" alt="Caveman Bowls" />
-                </div>
-                <figcaption>
-                    Handsome Holdings, LLC<br/>
-                    Web Design & Ecommerce
-                </figcaption>
-            </figure>
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="img/psk.png" alt="Phi Sigma Kappa" />
-                </div>
-                <figcaption>
-                    Phi Sigma Kappa<br/>
-                    Logo Design & Web Design
-                </figcaption>
-            </figure>
+            <?php 
+                require 'mustache/src/Mustache/Autoloader.php';
+                require 'templates/items.php';
+                Mustache_Autoloader::register();
+    
+                $num_items = 3;
+                $mustache = new Mustache_Engine(array(
+                    'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/templates'),
+                ));
+                for($i = 0; $i < $num_items; $i++) {
+                    echo $mustache->render('item', $projects[$i]);
+                }
+            ?>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <h2>And a few of my latest tweets</h2>
-    <img class="prev-btn" src="" alt="Previous" />
+    <h2 class="center">And a few of my latest tweets</h2>
     <div class="tweet-list">
-        <div class="tweet col-xs-12 col-sm-5">
-            <div class="quote">
-                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-            </div>
-            <p class="info">
-                <span class="pull-left">
-                    <a href="#">View on Twitter</a>
-                </span>
-                <span class="pull-right">
-                    1 hour ago
-                </span>
-            </p>
-        </div>
-        <div class="tweet col-xs-12 col-sm-5">
-            <div class="quote">
-                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-            </div>
-            <p class="info">
-                <span class="pull-left">
-                    <a href="#">View on Twitter</a>
-                </span>
-                <span class="pull-right">
-                    1 hour ago
-                </span>
-            </p>
-        </div>
-        <div class="tweet col-xs-12 col-sm-5">
-            <div class="quote">
-                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-            </div>
-            <p class="info">
-                <span class="pull-left">
-                    <a href="#">View on Twitter</a>
-                </span>
-                <span class="pull-right">
-                    1 hour ago
-                </span>
-            </p>
-        </div>
-        <div class="tweet col-xs-12 col-sm-5">
-            <div class="quote">
-                    Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem
-            </div>
-            <p class="info">
-                <span class="pull-left">
-                    <a href="#">View on Twitter</a>
-                </span>
-                <span class="pull-right">
-                    1 hour ago
-                </span>
-            </p>
-        </div>
+        <?php
+            require 'templates/tweets.php';
+            $num_tweets = 4;
+            for($i = 0; $i < $num_tweets; $i++) {
+                echo $mustache->render('tweet', $tweet);
+            }
+        ?>
     </div>
-    <img class="next-btn" src="" alt="Next" />
 </div>
 <div class="container-fluid container-alt">
     <div class="container">
-        <div class="button-red col-xs-12 col-sm-4 col-sm-offset-4">
-            <div class="icon icon-about">
-                <img src="img/about.png" alt="About" />
-            </div>
-            <button>About Me</button>
-        </div>
+        <?php
+            require 'templates/buttons.php';
+            $button = new Button_Red("About Me");
+            echo $mustache->render('button', $button);
+        ?>
     </div>
 </div>
 
-<?php require '_footer.php'; ?>
+<?php require 'partials/_footer.php'; ?>

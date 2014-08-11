@@ -1,33 +1,54 @@
-// _core.scss
+// _base.scss
 
 @import 'vendor/sass-import-once';
-@import 'utils/colors';
-@import 'vendor/bootstrap/variables';
+@import 'utils/reset';
+@import 'utils/breakpoints';
+@import 'utils/variables';
 
 @include exports('base') {
 
 body {
-    font-size: 10px;
+    font-size: 10px; // Normalize units for rem
     font-family: 'Lato', sans-serif;
+    font-weight: $fw-normal;
     line-height: 3rem;
 }
 
 h1 {
-    padding-left: 1.5rem;
-    margin-top: 3rem;
-    margin-bottom: 0;
+    margin: 3rem 0 1rem;
     font-family: 'ChunkFive', serif;
     font-size: 4rem;
     text-transform: lowercase;
+
+    @include min-width($screen-mini) {
+        font-size: 4.8rem;
+    }
+
+    @include min-width($screen-md) {
+        margin-top: 5rem;
+        font-size: 5.2rem;
+    }
 }
 
 h2 {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin: 4rem 0;
     font-family: 'Arvo', serif;
     font-size: 2.4rem;
-    // font-size: 3.6rem;
-    text-align: center;
+    text-align: left;
+
+    &.center {
+        text-align: center;
+    }
+
+    @include min-width($screen-sm) {
+        margin: 5rem 0;
+        font-size: 3rem;
+    }
+
+    @include min-width($screen-md) {
+        margin: 7rem 0;
+        font-size: 3.6rem;
+    }
 }
 
 %h4-surrounding {
@@ -36,103 +57,66 @@ h2 {
     top: 0;
     display: block;
     height: 100%;
-    border: 5px solid $resume_blue;
+    border: 10px solid $blue;
 }
 
 h4 {
     position: relative;
     margin: 2rem 0;
-    background-color: $resume_blue;
+    background-color: $blue;
     color: white;
     font-family: 'Arvo', serif;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: $fw-bold;
     line-height: 5rem;
     text-align: center;
     text-transform: uppercase;
 
     &:before {
         @extend %h4-surrounding;
-        left: -1rem;
+        left: -2rem;
     }
 
     &:after {
         @extend %h4-surrounding;
-        right: -1rem;
-    }
-}
-
-.container-fluid.container-alt {
-    // -webkit-box-shadow: 0 0 0.6rem 0 rgba(136, 136, 136, 0.5) inset;
-    // -moz-box-shadow: 0 0 0.6rem 0 rgba(136, 136, 136, 0.5) inset;
-    box-shadow: 0 0 0.6rem 0 rgba(136, 136, 136, 0.5) inset;
-    background-color: $white_gray;
-}
-
-[class*="col-xs"] {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
-}
-
-.col-centered {
-    margin-left: auto;
-    margin-right: auto;
-    float: none;
-}
-
-.container {
-    padding: 0rem 1rem;
-    font-size: 1.6rem;
-}
-
-} // End Export
-
-@media (min-width: $screen-sm) {
-    h1 {
-        font-size: 4.8rem;
+        right: -2rem;
     }
 
-    h2 {
-        font-size: 3rem;
-    }
-
-    h4 {
+    @include min-width($screen-sm) {
         margin: 0;
         background-color: transparent;
-        color: $resume_blue;
+        color: $blue;
         font-size: 1.6rem;
-        font-weight: 700;
+        font-weight: $fw-bold;
         text-align: left;
         text-transform: none;
         line-height: 3rem;
 
-        &:before, &:after {
+        &:before, 
+        &:after {
             content: none;
         }
     }
 }
 
-@media (min-width: $screen-md) {
-    h1 {
-        margin-top: 5rem;
-        padding-left: 9rem;
-        font-size: 5.2rem;
-    }
-    
-    h2 {
-        padding-top: 5rem;
-        padding-bottom: 5rem;
-        font-size: 3.6rem;
+.container, 
+.container-fluid {
+    padding: 0 2rem;
+    font-size: 1.6rem; // Default font-size
+
+    @include min-width($screen-md) {
+        padding: 0 7.75rem;
     }
 
-    [class*="col-xs"] {
-        margin-top: 5rem;
-        margin-bottom: 5rem;
+    &.container-alt {
+        margin: 0;
+        box-shadow: 0 0 0.6rem 0 rgba(136, 136, 136, 0.5) inset;
+        background-color: $white_gray;
+    }
+
+    .container {
+        padding: 0;
     }
 }
 
-@media (min-width: $screen-lg) {
-    h1 {
-        font-size: 7.2rem;
-    }
-}
+} // End Export

@@ -1,31 +1,42 @@
-@import 'layout/base';
-@import 'layout/header';
-@import 'layout/footer';
+@import 'layout/all-layout';
+@import 'utils/breakpoints';
+@import 'utils/variables';
 @import 'components/button';
-@import 'vendor/bootstrap/variables';
 
-#resume {
-    margin-top: 2rem;
+.resume-data {
+    margin: auto;
 
-    #resume-title {
+    @include auto-spacing(margin-top);
+    @include auto-spacing(margin-bottom);
+
+    .resume-title {
         margin: 0;
-        font-size: 3.1rem;
-        font-weight: 700;
-        text-transform: uppercase;
+        font-size: 2.84rem;
+        font-weight: $fw-bold;
         line-height: 5rem;
+        text-transform: uppercase;
         
-        span:first-child {
+        @include min-width($screen-sm) {
+            margin-bottom: 1.5rem;
+            font-size: 3.45rem;        
+        }
+
+        .first-name {
             color: black;
         }
-        span:last-child {
-            color: $resume_blue;
+        .last-name {
+            color: $blue;
         }
     }
 
     .resume-divider {
         height: 0;
-        display: none;
+        display: none; // Not visible
         border-bottom: 1px $light_gray dashed;
+
+        @include min-width($screen-sm) {
+            display: block; // Visible
+        }
     }
 
     .col-xs-12 {
@@ -34,8 +45,6 @@
     }
 
     ul {
-        margin: 0;
-        padding: 0;
         padding-left: 1.75rem;
     }
 
@@ -43,23 +52,10 @@
         height: 2rem;
         border: none;
     }
-}
 
-@media (min-width: $screen-sm) {
-    #resume {
-        #resume-title {
-            margin-bottom: 1.5rem;
-            font-size: 3.45rem;
-        }
-
-        .resume-divider {
-            display: block;
-        }
-
-        address {
-            br {
-                display: none;
-            }
+    address br {
+        @include min-width($screen-sm) {
+            display: none;
         }
     }
 }

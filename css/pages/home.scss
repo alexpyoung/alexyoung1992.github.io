@@ -1,34 +1,12 @@
-@import 'layout/base';
-@import 'layout/header';
-@import 'layout/footer';
+@import 'layout/all-layout';
+@import 'utils/breakpoints';
+@import 'components/button';
 @import 'components/item';
 @import 'components/tweet';
-@import 'components/button';
 
 .hero {
     margin-bottom: 0;
     padding: 0;
 
-    img {        
-        height: 100%;
-        width: 100%;
-    }
-}
-
-.prev-btn, .next-btn {
-    display: none;
-}
-
-.tweet-list {
-    .tweet {
-        margin-left: 1rem;
-        margin-right: 1rem;
-
-        &:first-child, &:nth-child(3) {
-            margin-left: 0;
-        }
-        &:nth-child(2), &:last-child {
-            margin-right: 0;
-        }
-    }
+    @include auto-spacing(margin-top);
 }

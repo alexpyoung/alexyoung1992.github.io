@@ -1,24 +1,76 @@
 // _nav.scss
 
-@import 'utils/positioning';
-@import 'utils/colors';
-@import 'vendor/bootstrap/variables';
+@import 'vendor/sass-import-once';
+@import 'utils/all-utils';
+
+@mixin navbar-info($color, $link-selector, $bkgnd-pos-x) {
+    border-bottom-color: $color;
+
+    .nav-item #{$link-selector} {
+        color: $color;
+
+        .nav-icon {
+            background-position: -$bkgnd-pos-x -25px;
+        }
+    }
+}
+
+@include exports('header') {
 
 nav {
     background-color: $black_gray;
+    border-bottom: 5px solid $light_gray;
+
+    &.about-navbar {
+        @include navbar-info($red, ".about-link", 0);
+    }
+
+    &.portfolio-navbar {
+        @include navbar-info($green, ".portfolio-link", 25px);
+    }
+
+    &.resume-navbar {
+        @include navbar-info($blue, ".resume-link", 50px);
+    }
+
+    &.blog-navbar {
+        @include navbar-info($yellow, ".blog-link", 75px);
+    }
+
+    &.contact-navbar {
+        @include navbar-info($orange, ".contact-link", 100px);
+    }
 
     .nav-header {
         position: relative; // Req'd parent property for .nav-toggle.absolute-center
-        height: 5rem;
+
+        @include min-width($screen-sm) {
+            display: block;
+            float: left;
+        }
 
         .logo {
-            width: 3.5rem;
-            height: 3.5rem;
-            margin-top: 1.5rem;
+            margin: 1rem 0;
 
-            img {
-                width: 100%;
-                height: 100%;
+            @include min-width($screen-sm) {
+                height: 7rem;
+                width: 7rem;
+                margin: 2.5rem 0;
+            }
+
+            a {
+                height: 3.5rem;
+                width: 3.5rem;
+                display: block;
+                background: url("../../img/logo.png") 0 0;
+                
+                @include background-size(100%, 100%);
+                @include attention; // _box-model.scss
+
+                @include min-width($screen-sm) {
+                    height: 7rem;
+                    width: 7rem;
+                }
             }
         }
 
@@ -28,93 +80,97 @@ nav {
             right: 0;
             height: 70%;
             width: 4rem;
+            margin: 0.5rem 0;
             padding: 0;
             background: url("../../img/menu-icon.png") #222222 no-repeat 0.5rem;
             border: none;
+
+            @include attention;
+
+            @include min-width($screen-sm) {
+                display: none;
+            }
         }
     }
 
-    ul.nav-list {        
+    .nav-collapse {
+        @include min-width($screen-sm) {
+            display: block;
+        }
+
+        @include min-width($screen-md) {
+            margin-right: auto;
+        }
+
+        @include min-width($screen-lg) {
+            margin-left: 0;
+        }
+    }
+
+    .nav-list {        
         margin: 0; // Remove default styling
         padding: 0; // Remove default styling
-        background-color: $darkest_gray;
         font-size: 1.7rem;
-        font-weight: 700;
+        font-weight: $fw-bold;
         text-transform: uppercase;
         list-style-type: none;
 
-        li {
-            border-top: 0.1rem solid $black_gray;
+        @include min-width($screen-sm) {
+            width: 595px;
+            margin: 1rem auto 0;
+            padding-left: 70px;
+            background-color: $black_gray;
+        }
+
+        @include min-width($screen-md) {
+            width: 635px;
+        }
+
+        @include min-width($screen-lg) {
+            width: 715px;
+        }
+
+        .nav-item {
             padding: 1.5rem 0;
+            border-top: 0.1rem solid #111111;
             text-align: center;
 
-            a{
-                color: white;
-
-                &:hover, &:active {
-                    text-decoration: none;
-                    transition: all 0.3s;
-
-                    &#about-nav {
-                        color: $red;
-                    }
-                    &#portfolio-nav {
-                        color: $green;
-                    }
-                    &#resume-nav {
-                        color: $blue;
-                    }
-                    &#blog-nav {
-                        color: $yellow;
-                    }
-                    &#contact-nav {
-                        color: $orange;
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media (min-width: $screen-sm) {
-    nav {
-
-        .nav-header {
-            display: inline-block;
-            height: 10rem;
-
-            .logo {
-                width: 7rem;
-                height: 7rem;
-                margin-top: 1.5rem;
-            }
-
-            .nav-toggle {
-                display: none;
-            }      
-        }
-        .nav-collapse {
-            display: block;
-            margin-top: -8rem;
-            padding-bottom: 2rem;
-
-            ul.nav-list {
-                width: 614px;
-                margin: 0 auto;
+            &:last-child {
                 margin-right: 0;
-                background-color: $black_gray;
+            }
 
-                li {
-                    display: inline-block;
-                    margin: 0 2.5rem;
+            @include min-width($screen-sm) {
+                display: inline-block;
+                margin-right: 4rem;
+                border-top: none;
+            }
+
+            @include min-width($screen-md) {
+                margin-right: 5rem;
+            }
+
+            @include min-width($screen-lg) {
+                margin-right: 7rem;
+            }
+
+            @include attention {
+                a {
+                    @include text-decoration(none);
+                    outline: none;
+                }
+            }
+
+            a {
+                color: white;
+            }
+
+            .nav-title {
+                @include min-width($screen-sm) {
+                    padding-top: 1.6rem;
                 }
             }
         }
     }
 }
 
-@media (min-width: $screen-md) {
-    nav .nav-collapse ul.nav-list {
-        margin-right: auto;
-    }
-}
+} // End export

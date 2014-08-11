@@ -1,0 +1,36 @@
+// _breakpoints.scss
+
+@import 'vendor/sass-import-once';
+@import 'vendor/bootstrap/variables';
+
+@mixin min-width ($breakpoint) {
+    @media (min-width: $breakpoint) {
+        @content;
+    }
+}
+
+@mixin width-from ($breakpoint1, $breakpoint2) {
+    @media (min-width: $breakpoint1) and (max-width: $breakpoint2) {
+        @content;
+    }
+}
+
+@mixin auto-spacing ($property) {
+    #{$property}: 4rem;
+
+    @include min-width($screen-sm) {
+        #{$property}: 5rem;
+    }
+
+    @include min-width($screen-md) {
+        #{$property}: 7rem;
+    }
+}
+
+// Mini screen / tablet-mini breakpoint
+$screen-mini:       600px !default;
+$screen-mini-min:   $screen-mini !default;
+$screen-tablet:     $screen-mini-min !default;
+
+$screen-xs-max:     ($screen-mini-min - 1) !default;
+$screen-mini-max:   ($screen-sm-min - 1) !default;

@@ -1,9 +1,9 @@
-<?php require '_header.php'; ?>
+<?php require 'partials/_header.php'; ?>
 
-<div class="container" id="resume">
+<div class="resume-data container">
     <div class="row ">
         <div class="col-xs-12 col-sm-8 col-md-7">
-            <p id="resume-title"><span>Alexander</span>&nbsp;<span>Young</span></p>
+            <p class="resume-title"><span class="first-name">Alexander</span>&nbsp;<span class="last-name">Young</span></p>
             <address>1035 Noria Street, <br/>Laguna Beach, CA 92651, USA</address>
         </div>
         <div class="col-xs-12 col-sm-4 col-md-5">
@@ -147,12 +147,16 @@ with front-end GUI objects</li>
 </div>
 
 <div class="container-fluid container-alt">
-    <div class="button-blue col-xs-12 col-sm-6 col-sm-offset-3">
-        <div class="icon icon-resume">
-            <img src="img/resume.png" alt="Resume" />
-        </div>
-        <button>Download a copy</button>
-    </div>
+    <?php
+        require 'templates/buttons.php';
+        require 'mustache/src/Mustache/Autoloader.php';
+        Mustache_Autoloader::register();
+        $mustache = new Mustache_Engine(array(
+            'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/templates'),
+        ));
+        $button = new Button_Blue("Download A Copy");
+        echo $mustache->render('button', $button);
+    ?>
 </div>
 
-<?php require '_footer.php'; ?>
+<?php require 'partials/_footer.php'; ?>

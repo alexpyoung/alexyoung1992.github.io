@@ -1,74 +1,39 @@
-<?php require '_header.php'; ?>
+<?php require 'partials/_header.php'; ?>
+
+<div class="container">
+    <h2>Web Development</h2>
+    <div class="item-list">
+        <?php 
+            require 'mustache/src/Mustache/Autoloader.php';
+            require 'templates/items.php';
+            Mustache_Autoloader::register();
+
+            $items = 3;
+            $mustache = new Mustache_Engine(array(
+                'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/templates'),
+            ));
+            for($i = 0; $i < $items; $i++) {
+                echo $mustache->render('item', $projects[$i]);
+            }
+        ?>
+    </div>
+    <h2>Programming</h2>
+    <div class="item-list">
+        <?php 
+            for($i = $items, $num = sizeof($projects); $i < $num; $i++) {
+                echo $mustache->render('item', $projects[$i]);
+            }
+        ?>
+    </div>
+</div>
+<div class="container-fluid container-alt">
     <div class="container">
-        <h2>Web Development</h2>
-        <div class="item-list">
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="img/clipmunk.png" alt="Clipmunk" />
-                </div>
-                <figcaption>
-                    Clipmunk<br/>
-                    Web Design & Development
-                </figcaption>
-            </figure>
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="img/caveman.png" alt="Caveman Bowls" />
-                </div>
-                <figcaption>
-                    Handsome Holdings, LLC<br/>
-                    Web Design & Ecommerce
-                </figcaption>
-            </figure>
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="img/psk.png" alt="Phi Sigma Kappa" />
-                </div>
-                <figcaption>
-                    Phi Sigma Kappa<br/>
-                    Logo Design & Web Design
-                </figcaption>
-            </figure>
-        </div>
-        <h2>Programming</h2>
-        <div class="item-list">
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="" alt="" />
-                </div>
-                <figcaption>
-                    Factory Project<br/>
-                    GUI Development and Animation
-                </figcaption>
-            </figure>
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="" alt="" />
-                </div>
-                <figcaption>
-                    Side-scrolling Game Project<br/>
-                    Game Design and Development
-                </figcaption>
-            </figure>
-            <figure class="item col-xs-12 col-sm-4">
-                <div class="figimage">
-                    <img src="" alt="" />
-                </div>
-                <figcaption>
-                    Restaurant Project<br/>
-                    Agent-Based GUI Design
-                </figcaption>
-            </figure>
-        </div>
+        <?php
+            require 'templates/buttons.php';
+            $button = new Button_Orange("Contact Me");
+            echo $mustache->render('button', $button);
+        ?>
     </div>
-    <div class="container-fluid container-alt">
-        <div class="container">
-            <div class="button-orange col-xs-12 col-sm-4 col-sm-offset-4">
-                <div class="icon icon-contact">
-                    <img src="img/contact.png" alt="Contact" />
-                </div>
-                <button>My work</button>
-            </div>
-        </div>
-    </div>
-<?php require '_footer.php'; ?>
+</div>
+
+<?php require 'partials/_footer.php'; ?>
