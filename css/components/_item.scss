@@ -7,6 +7,14 @@
 
 @include exports('item') {
 
+h2 {
+    text-align: center;
+
+    @include min-width($screen-sm) {
+        text-align: left;
+    }
+}
+
 .item-list {
     width: 100%;
     max-width: 338px;
@@ -16,13 +24,19 @@
         max-width: 1170px;
     }
 
-    [class*="col"] {
+    .item-wrapper {
+        float: none;
+
         &:nth-of-type(3n+1),  // 1st element in triad
         &:nth-of-type(3n+2) { // 2nd element in triad
             @include min-width($screen-sm) {
                 padding-right: 2rem;
             }
-        }   
+        }
+
+        @include min-width($screen-sm) {
+            float: left;
+        }
     }
 
     .item-link {
