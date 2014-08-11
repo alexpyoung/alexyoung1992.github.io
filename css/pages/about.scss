@@ -2,8 +2,8 @@
 @import 'utils/breakpoints';
 @import 'components/button';
 
-@mixin hex-background($x-pos, $y-pos, $idk) {
-    background: url('../../img/icons/skills-icons.png') white $x-pos $y-pos;
+@mixin hex-background($x-pos, $y-pos) {
+    background-position: $x-pos $y-pos;
 }
 
 %hex-surrounding {
@@ -21,7 +21,7 @@
     display: inline-block;
     margin-bottom: 13rem;
     box-shadow: 5px 0px 10px -5px #888;
-    background-color: white;
+    background: url('../../img/icons/skills-icons.png');
     margin-right: 2rem;
     color: white;
     font-size: 5rem;
@@ -138,43 +138,43 @@
 
     .skill-html {
         @extend %hex;
-        @include hex-background(0, 0, 5rem);
+        @include hex-background(0, 0);
     }
     .skill-css {
         @extend %hex;
-        @include hex-background(-208px, 0, 7rem);
+        @include hex-background(-208px, 0);
     }
     .skill-javascript {
         @extend %hex;
-        @include hex-background(-416px, 0, 2rem);
+        @include hex-background(-416px, 0);
     }
     .skill-bootstrap {
         @extend %hex;
-        @include hex-background(-624px, 0, 2rem);
+        @include hex-background(-624px, 0);
     }
     .skill-jquery {
         @extend %hex;
-        @include hex-background(-832px, 0, 3rem);
+        @include hex-background(-832px, 0);
     }
     .skill-angularjs {
         @extend %hex;
-        @include hex-background(0, -125px, 2rem);
+        @include hex-background(0, -125px);
     }
     .skill-rails {
         @extend %hex;
-        @include hex-background(-208px, -125px, 5rem);
+        @include hex-background(-208px, -125px);
     }
     .skill-sass {
         @extend %hex;
-        @include hex-background(-416px, -125px, 6rem);
+        @include hex-background(-416px, -125px);
     }
     .skill-ruby {
         @extend %hex;
-        @include hex-background(-624px, -125px, 5.5rem);
+        @include hex-background(-624px, -125px);
     }
     .skill-java {
         @extend %hex;
-        @include hex-background(-832px, -125px, 6rem);
+        @include hex-background(-832px, -125px);
     }
 }
 
