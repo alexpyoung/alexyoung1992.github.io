@@ -31,7 +31,15 @@
     @include auto-spacing(margin-top);
     @include auto-spacing(margin-bottom);
 
-    @include attention; // _box-model.scss
+    @include attention { // _box-model.scss
+        .button-link {
+            text-decoration: none;
+        }
+    }
+
+    .button-link {
+        display: block;
+    }
 
     .button-icon-wrapper {
         height: 6.5rem;

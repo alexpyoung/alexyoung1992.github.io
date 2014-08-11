@@ -39,7 +39,7 @@
 <div class="container-fluid container-alt">
     <?php
         require 'templates/buttons.php';
-        $button = new Button_Red("About Me");
+        $button = new Button_Red("about.php", "About Me");
         echo $mustache->render('button', $button);
     ?>
 </div>

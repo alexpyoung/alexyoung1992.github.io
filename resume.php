@@ -154,7 +154,7 @@ with front-end GUI objects</li>
         $mustache = new Mustache_Engine(array(
             'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/templates'),
         ));
-        $button = new Button_Blue("Download A Copy");
+        $button = new Button_Blue("Alexander Young - Resume.pdf", "Download A Copy");
         echo $mustache->render('button', $button);
     ?>
 </div>

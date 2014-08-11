@@ -53,7 +53,7 @@
         $mustache = new Mustache_Engine(array(
             'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/templates'),
         ));
-        $button = new Button_Green("My work");
+        $button = new Button_Green("portfolio.php", "My work");
         echo $mustache->render('button', $button);
     ?>
 </div>

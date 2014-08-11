@@ -30,7 +30,7 @@
     <div class="container">
         <?php
             require 'templates/buttons.php';
-            $button = new Button_Orange("Contact Me");
+            $button = new Button_Orange("contact.php", "Contact Me");
             echo $mustache->render('button', $button);
         ?>
     </div>
