@@ -1,5 +1,7 @@
 ## .gitignore for alexyoung1992/alexyoung1992.github.io
 
+.gitignore.swp
+
 # SASS cache
 css/.sass-cache/*
 
