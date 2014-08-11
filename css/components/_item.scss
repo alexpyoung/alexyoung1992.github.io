@@ -8,6 +8,14 @@
 @include exports('item') {
 
 .item-list {
+    width: 100%;
+    max-width: 338px;
+    margin: 0 auto;
+
+    @include min-width($screen-sm) {
+        max-width: 1170px;
+    }
+
     [class*="col"] {
         &:nth-of-type(3n+1),  // 1st element in triad
         &:nth-of-type(3n+2) { // 2nd element in triad
