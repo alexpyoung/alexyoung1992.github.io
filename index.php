@@ -39,13 +39,11 @@
     </div>
 </div>
 <div class="container-fluid container-alt">
-    <div class="container">
-        <?php
-            require 'templates/buttons.php';
-            $button = new Button_Red("About Me");
-            echo $mustache->render('button', $button);
-        ?>
-    </div>
+    <?php
+        require 'templates/buttons.php';
+        $button = new Button_Red("About Me");
+        echo $mustache->render('button', $button);
+    ?>
 </div>
 
 <?php require 'partials/_footer.php'; ?>
