@@ -38,6 +38,17 @@ module.exports = function (grunt) {
         },
 
         cssc: {
+            // build: {
+            //     files: [{
+            //         cwd: 'build/css',
+            //         src: ['**/*.css'],
+            //         dest: 'build/css',
+            //         expand: true
+            //     }]
+            // }
+        },
+
+        cssmin: {
             build: {
                 files: [{
                     cwd: 'build/css',
@@ -45,17 +56,6 @@ module.exports = function (grunt) {
                     dest: 'build/css',
                     expand: true
                 }]
-            }
-        },
-
-        cssmin: {
-            build: {
-                // files: [{
-                //     cwd: 'build/css',
-                //     src: ['**/*.css'],
-                //     dest: 'build/css',
-                //     expand: true
-                // }]
             }
         },
 
