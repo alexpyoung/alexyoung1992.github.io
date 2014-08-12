@@ -27,27 +27,35 @@ module.exports = function (grunt) {
 
         sass: {
             build: {
-                    files: [{
-                        cwd: 'build/css',
-                        src: ['**/*.scss', '!**/_*.scss'],
-                        dest: 'build/css',
-                        ext: '.css',
-                        expand: true
-                    }]
+                files: [{
+                    cwd: 'build/css',
+                    src: ['**/*.scss', '!**/_*.scss'],
+                    dest: 'build/css',
+                    ext: '.css',
+                    expand: true
+                }]
             }
         },
 
         cssc: {
             build: {
-                    src: 'style.css',
-                    dest: 'style.css'
+                files: [{
+                    cwd: 'build/css',
+                    src: ['**/*.css'],
+                    dest: 'build/css',
+                    expand: true
+                }]
             }
         },
 
         cssmin: {
             build: {
-                    src: 'style.css',
-                    dest: 'style.css'
+                // files: [{
+                //     cwd: 'build/css',
+                //     src: ['**/*.css'],
+                //     dest: 'build/css',
+                //     expand: true
+                // }]
             }
         },
 
@@ -60,13 +68,6 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('build-sass', 'Compiles, optimizes, and minifies SASS files', [
-        'sass:build'
-        // 'clean:sass', 
-        // 'cssc:build', 
-        // 'cssmin:build'
-        ]);
-    grunt.registerTask('build', 'Compiles source files into a build directory', ['clean:build', 'copy:build', 'build-sass', 'cleanempty:build'
-        // , 'watch'
-        ]);
+    grunt.registerTask('build-sass', 'Compiles, optimizes, and minifies SASS files', ['sass:build', 'clean:sass', 'cssmin:build']);
+    grunt.registerTask('build', 'Compiles source files into a build directory', ['clean:build', 'copy:build', 'build-sass', 'cleanempty:build', 'watch']);
 };
