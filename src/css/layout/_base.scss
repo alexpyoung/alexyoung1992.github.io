@@ -1,9 +1,9 @@
 // _base.scss
 
-@import 'vendor/sass-import-once';
-@import 'utils/reset';
-@import 'utils/breakpoints';
-@import 'utils/variables';
+@import '../vendor/sass-import-once';
+@import '../utils/reset';
+@import '../utils/breakpoints';
+@import '../utils/variables';
 
 @include exports('base') {
 

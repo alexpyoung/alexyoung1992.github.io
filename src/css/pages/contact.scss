@@ -1,6 +1,6 @@
-@import 'layout/all-layout';
-@import 'components/button';
-@import 'utils/all-utils';
+@import '../layout/all-layout';
+@import '../components/button';
+@import '../utils/all-utils';
 
 @mixin contact-info($color, $bkgnd-pos-x) {
     a {
@@ -145,6 +145,7 @@
 
         textarea.input {
             height: 15rem;
+            resize: none;
         }
     }
 

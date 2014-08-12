@@ -1,0 +1,12 @@
+@import '../layout/all-layout';
+@import '../utils/breakpoints';
+@import '../components/button';
+@import '../components/item';
+@import '../components/tweet';
+
+.hero {
+    margin-bottom: 0;
+    padding: 0;
+
+    @include auto-spacing(margin-top);
+}
