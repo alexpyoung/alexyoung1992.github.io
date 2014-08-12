@@ -4,7 +4,7 @@
     <h2>Web Development</h2>
     <div class="item-list">
         <?php 
-            require 'mustache/src/Mustache/Autoloader.php';
+            require '../mustache/src/Mustache/Autoloader.php';
             require 'templates/items.php';
             Mustache_Autoloader::register();
 

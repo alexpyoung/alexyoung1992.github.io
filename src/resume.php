@@ -149,7 +149,7 @@ with front-end GUI objects</li>
 <div class="container-fluid container-alt">
     <?php
         require 'templates/buttons.php';
-        require 'mustache/src/Mustache/Autoloader.php';
+        require '../mustache/src/Mustache/Autoloader.php';
         Mustache_Autoloader::register();
         $mustache = new Mustache_Engine(array(
             'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/templates'),
