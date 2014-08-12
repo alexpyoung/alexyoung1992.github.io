@@ -1,7 +1,7 @@
 // _breakpoints.scss
 
-@import 'vendor/sass-import-once';
-@import 'vendor/bootstrap/variables';
+@import '../vendor/sass-import-once';
+@import '../vendor/bootstrap/variables';
 
 @mixin min-width ($breakpoint) {
     @media (min-width: $breakpoint) {

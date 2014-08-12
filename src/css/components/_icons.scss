@@ -1,8 +1,8 @@
 // _icons.scss
 
-@import 'vendor/sass-import-once';
-@import 'utils/breakpoints';
-@import 'utils/box-model';
+@import '../vendor/sass-import-once';
+@import '../utils/breakpoints';
+@import '../utils/box-model';
 
 @mixin icon-pos ($height, $top, $bkgnd-x-pos) {
     height: $height;

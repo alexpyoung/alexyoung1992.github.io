@@ -1,7 +1,7 @@
 // _nav.scss
 
-@import 'vendor/sass-import-once';
-@import 'utils/all-utils';
+@import '../vendor/sass-import-once';
+@import '../utils/all-utils';
 
 @mixin navbar-info($color, $link-selector, $bkgnd-pos-x) {
     border-bottom-color: $color;

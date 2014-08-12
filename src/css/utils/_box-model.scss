@@ -1,6 +1,6 @@
 // _box-model.scss
 
-@import 'utils/variables';
+@import '../utils/variables';
 
 @mixin background-size ($x, $y) {
     background-size: $x $y;

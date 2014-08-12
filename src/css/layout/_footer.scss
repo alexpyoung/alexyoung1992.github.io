@@ -1,9 +1,9 @@
 // _footer.scss
 
-@import 'vendor/sass-import-once';
-@import 'utils/breakpoints';
-@import 'utils/box-model';
-@import 'utils/variables';
+@import '../vendor/sass-import-once';
+@import '../utils/breakpoints';
+@import '../utils/box-model';
+@import '../utils/variables';
 
 @include exports('footer') {
 
