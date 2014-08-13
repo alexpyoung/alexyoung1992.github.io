@@ -48,7 +48,7 @@ handlers:
   static_dir: build/utils
   application_readable: true
 
-- url: **/mustache
+- url: /(.*/)?.*/mustache
   static_dir: /mustache
   application_readable: true
 
