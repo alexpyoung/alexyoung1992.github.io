@@ -2,6 +2,7 @@ application: alex-young
 version: 2
 runtime: php
 api_version: 1
+threadsafe: true
 
 default_expiration: "7d 0h"
 
