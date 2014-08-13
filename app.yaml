@@ -11,13 +11,6 @@ skip_files:
 - (.*/)?.*/src/.+
 - (.*/)?.*/gruntfile\.js
 - (.*/)?.*/todo\.txt
-# - ^(.*/)?#.*#
-# - ^(.*/)?.*~
-# - ^(.*/)?.*\.py[co]
-# - ^(.*/)?.*/RCS/.*
-# - ^(.*/)?\..*
-# - ^(.*/)?.*/nbproject/.*
-#- ^(.*/)?.*/images/.*
 
 handlers:
 # - url: /robots.txt
@@ -57,7 +50,7 @@ handlers:
   static_files: \1
   upload: (.*\.(gif|png|jpg|ico|js|css|eot|svg|ttf|woff))
 
-- url: /(.+\.php)
+- url: /(.+\.php)$
   script: build/\1
 
 - url: /
