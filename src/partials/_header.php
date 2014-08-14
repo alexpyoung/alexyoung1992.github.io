@@ -48,6 +48,7 @@ require_once TEMPLATES_PATH.'/buttons.php';
     ?>
 </head>
 <body>
+    <div class="construction-banner">Currently under construction</div>
     <nav
     <?php
         switch(get_current_page_name()) {
