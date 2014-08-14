@@ -1,3 +1,11 @@
+<?php
+
+require_once UTILS_PATH.'/current_page.php';
+require_once MUSTACHE_PATH.'/src/Mustache/Autoloader.php';
+require_once TEMPLATES_PATH.'/buttons.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +19,6 @@
     <link href="http://fonts.googleapis.com/css?family=Arvo" rel="stylesheet" type="text/css">
     <link href="css/vendor/chunkfive.css" rel="stylesheet" type="text/css">
     <?php
-        require_once 'utils/current_page.php';
-
         switch(get_current_page_name()) {
             case 'index.php': {
                 echo '<link href="css/pages/home.css" rel="stylesheet" type="text/css">';
@@ -44,8 +50,6 @@
 <body>
     <nav
     <?php
-        require_once 'utils/current_page.php';
-
         switch(get_current_page_name()) {
             case 'about.php': {
                 echo ' class="about-navbar" ';
@@ -79,7 +83,7 @@
                     </button>
             </div>
             <div class="nav-collapse collapse">
-                <?php require 'partials/_nav.php'; ?>
+                <?php require PARTIALS_PATH.'/_nav.php'; ?>
             </div>
         </div>
     </nav>

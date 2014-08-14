@@ -1,4 +1,9 @@
-<?php require 'partials/_header.php'; ?>
+<?php 
+
+require_once '../config.php';
+require_once PARTIALS_PATH.'/_header.php'; 
+
+?>
 
 <div class="resume-data container">
     <div class="row ">
@@ -148,8 +153,6 @@ with front-end GUI objects</li>
 
 <div class="container-fluid container-alt">
     <?php
-        require 'templates/buttons.php';
-        require '../mustache/src/Mustache/Autoloader.php';
         Mustache_Autoloader::register();
         $mustache = new Mustache_Engine(array(
             'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/templates'),
@@ -159,4 +162,4 @@ with front-end GUI objects</li>
     ?>
 </div>
 
-<?php require 'partials/_footer.php'; ?>
+<?php require PARTIALS_PATH.'/_footer.php'; ?>

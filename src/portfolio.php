@@ -1,11 +1,15 @@
-<?php require 'partials/_header.php'; ?>
+<?php 
+
+require_once '../config.php';
+require_once PARTIALS_PATH.'/_header.php'; 
+
+?>
 
 <div class="container">
     <h2>Web Development</h2>
     <div class="item-list">
         <?php 
-            require '../mustache/src/Mustache/Autoloader.php';
-            require 'templates/items.php';
+            require TEMPLATES_PATH.'/items.php';
             Mustache_Autoloader::register();
 
             $items = 3;
@@ -29,11 +33,10 @@
 <div class="container-fluid container-alt">
     <div class="container">
         <?php
-            require 'templates/buttons.php';
             $button = new Button_Orange("contact.php", "Contact Me");
             echo $mustache->render('button', $button);
         ?>
     </div>
 </div>
 
-<?php require 'partials/_footer.php'; ?>
+<?php require PARTIALS_PATH.'/_footer.php'; ?>

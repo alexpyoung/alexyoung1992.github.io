@@ -1,5 +1,5 @@
     <footer>
-        <?php require 'partials/_nav.php'; ?>
+        <?php require PARTIALS_PATH.'/_nav.php'; ?>
         <div class="copyright">
             &#169; <?php echo date("Y"); ?> Alex Young
         </div>
