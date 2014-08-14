@@ -1,4 +1,9 @@
-<?php require 'partials/_header.php'; ?>
+<?php 
+
+require_once '../config.php';
+require_once PARTIALS_PATH.'/_header.php'; 
+
+?>
 
 <div class="container">
     <h1>Contact Me</h1>
@@ -49,8 +54,6 @@
             <textarea class="input" name="input-message" placeholder="Hi Alex, I'd like to get in touch..."></textarea>
         </div>
         <?php
-            require 'templates/buttons.php';
-            require '../mustache/src/Mustache/Autoloader.php';
             Mustache_Autoloader::register();
             $mustache = new Mustache_Engine(array(
                 'loader' => new Mustache_Loader_FilesystemLoader(dirname(__FILE__).'/templates'),
@@ -66,4 +69,4 @@
 </div>
 </div>
 
-<?php require 'partials/_footer.php'; ?>
+<?php require PARTIALS_PATH.'/_footer.php'; ?>

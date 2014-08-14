@@ -1,4 +1,9 @@
-<?php require 'partials/_header.php'; ?>
+<?php 
+
+require_once '../config.php';
+require_once PARTIALS_PATH.'/_header.php'; 
+
+?>
 
 <div class="container">
     <div class="row">
@@ -13,4 +18,4 @@
     </div>
 </div>
 
-<?php require 'partials/_footer.php'; ?>
+<?php require PARTIALS_PATH.'/_footer.php'; ?>

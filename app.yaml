@@ -2,6 +2,7 @@ application: alex-young
 version: 2
 runtime: php
 api_version: 1
+threadsafe: true
 
 default_expiration: "7d 0h"
 
@@ -10,13 +11,6 @@ skip_files:
 - (.*/)?.*/src/.+
 - (.*/)?.*/gruntfile\.js
 - (.*/)?.*/todo\.txt
-# - ^(.*/)?#.*#
-# - ^(.*/)?.*~
-# - ^(.*/)?.*\.py[co]
-# - ^(.*/)?.*/RCS/.*
-# - ^(.*/)?\..*
-# - ^(.*/)?.*/nbproject/.*
-#- ^(.*/)?.*/images/.*
 
 handlers:
 # - url: /robots.txt
@@ -48,8 +42,8 @@ handlers:
   static_dir: build/utils
   application_readable: true
 
-- url: **/mustache
-  static_dir: /mustache
+- url: /mustache
+  static_dir: mustache
   application_readable: true
 
 - url: /(.*\.(gif|png|jpg|ico|js|css|eot|svg|ttf|woff))

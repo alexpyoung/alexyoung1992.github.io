@@ -1,14 +1,16 @@
 module.exports = function (grunt) {
     // Automatically load Grunt tasks from dependency lists
     require("matchdep").filterDev("grunt-*").forEach(grunt.loadNpmTasks);
+    // Show execution times of Grunt tasks
+    require('time-grunt')(grunt);
 
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        clean: {
-            build: ['build'],
-            sass: ['build/css/**/*.scss']
-        },
+        // clean: {
+        //     build: ['build'],
+        //     sass: ['build/css/**/*.scss']
+        // },
 
         cleanempty: {
             build: {
@@ -22,6 +24,13 @@ module.exports = function (grunt) {
                 src: ['**'],
                 dest: 'build',
                 expand: true
+            },
+
+            sass: {
+                cwd: 'src/css',
+                src: ['**'],
+                dest: 'build/css',
+                expand: true
             }
         },
 
@@ -29,7 +38,7 @@ module.exports = function (grunt) {
             build: {
                 files: [{
                     cwd: 'build/css',
-                    src: ['**/*.scss', '!**/_*.scss'],
+                    src: ['**/*.scss', '!**/_*.scss', '!vendor/**/*'],
                     dest: 'build/css',
                     ext: '.css',
                     expand: true
@@ -46,13 +55,14 @@ module.exports = function (grunt) {
             //         expand: true
             //     }]
             // }
+            // Don't know how to condense multiple files
         },
 
         cssmin: {
             build: {
                 files: [{
                     cwd: 'build/css',
-                    src: ['**/*.css'],
+                    src: ['**/*.css', '!vendor/**/*'],
                     dest: 'build/css',
                     expand: true
                 }]
@@ -60,14 +70,19 @@ module.exports = function (grunt) {
         },
 
         watch: {
+            all: {
+                files: ['src/**', '!**/*.scss'],
+                tasks: ['newer:copy:build']
+            },
+
             sass: {
-                files: ['build/css/**/*.scss'],
-                task: 'build-sass'
+                files: ['src/**/*.scss'],
+                tasks: ['newer:copy:sass', 'build-sass']
             }
         }
     });
 
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('build-sass', 'Compiles, optimizes, and minifies SASS files', ['sass:build', 'clean:sass', 'cssmin:build']);
-    grunt.registerTask('build', 'Compiles source files into a build directory', ['clean:build', 'copy:build', 'build-sass', 'cleanempty:build', 'watch']);
+    grunt.registerTask('build-sass', 'Compiles, optimizes, and minifies SASS files', ['sass:build', 'cssmin:build']);
+    grunt.registerTask('build', 'Compiles source files into a build directory', ['newer:copy:build', 'build-sass', 'cleanempty:build', 'watch']);
 };
