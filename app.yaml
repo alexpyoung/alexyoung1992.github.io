@@ -21,14 +21,14 @@ handlers:
   static_files: build/Alexander\ Young\ -\ Resume.pdf
   upload: build/Alexander\ Young\ -\ Resume.pdf
 
-# - url: /css
-#   static_dir: build/css
+- url: /css
+  static_dir: build/css
 
-# - url: /img
-#   static_dir: build/img  
+- url: /img
+  static_dir: build/img  
 
-# - url: /js
-#   static_dir: build/js  
+- url: /js
+  static_dir: build/js  
 
 # - url: /partials
 #   static_dir: build/partials
