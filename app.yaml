@@ -50,8 +50,8 @@ handlers:
   static_files: \1
   upload: (.*\.(gif|png|jpg|ico|js|css|eot|svg|ttf|woff))
 
-- url: /(.+\.php)$
-  script: build/\1
+# - url: /(.+\.php)$
+#   script: build/\1
 
 - url: /
   script: build/index.php
