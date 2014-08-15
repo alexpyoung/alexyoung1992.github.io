@@ -17,9 +17,9 @@ handlers:
 #   static_files: robots.txt
 #   upload: robots.txt 
   
-# - url: /Alexander\ Young\ -\ Resume.pdf
-#   static_dir: build/Alexander\ Young\ -\ Resume.pdf
-#   upload: build/Alexander\ Young\ -\ Resume.pdf
+- url: /Alexander\ Young\ -\ Resume.pdf
+  static_files: build/Alexander\ Young\ -\ Resume.pdf
+  upload: build/Alexander\ Young\ -\ Resume.pdf
 
 - url: /css
   static_dir: build/css
