@@ -21,30 +21,30 @@ handlers:
   static_files: build/Alexander\ Young\ -\ Resume.pdf
   upload: build/Alexander\ Young\ -\ Resume.pdf
 
-- url: /css
-  static_dir: build/css
+# - url: /css
+#   static_dir: build/css
 
-- url: /img
-  static_dir: build/img  
+# - url: /img
+#   static_dir: build/img  
 
-- url: /js
-  static_dir: build/js  
+# - url: /js
+#   static_dir: build/js  
 
-- url: /partials
-  static_dir: build/partials
-  application_readable: true
+# - url: /partials
+#   static_dir: build/partials
+#   application_readable: true
 
-- url: /templates
-  static_dir: build/templates
-  application_readable: true  
+# - url: /templates
+#   static_dir: build/templates
+#   application_readable: true  
 
-- url: /utils
-  static_dir: build/utils
-  application_readable: true
+# - url: /utils
+#   static_dir: build/utils
+#   application_readable: true
 
-- url: /mustache
-  static_dir: mustache
-  application_readable: true
+# - url: /mustache
+#   static_dir: mustache
+#   application_readable: true
 
 - url: /(.*\.(gif|png|jpg|ico|js|css|eot|svg|ttf|woff))
   static_files: \1
