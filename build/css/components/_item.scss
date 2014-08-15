@@ -1,0 +1,84 @@
+//_item.scss
+
+@import '../vendor/sass-import-once';
+@import '../utils/all-utils';
+
+/* See templates/item.mustache for HTML template */
+
+@include exports('item') {
+
+h2 {
+    text-align: center;
+
+    @include min-width($screen-sm) {
+        text-align: left;
+    }
+}
+
+.item-list {
+    width: 100%;
+    max-width: 338px;
+    margin: 0 auto;
+
+    @include min-width($screen-sm) {
+        max-width: 1170px;
+    }
+
+    .item-wrapper {
+        float: none;
+
+        &:nth-of-type(3n+1),  // 1st element in triad
+        &:nth-of-type(3n+2) { // 2nd element in triad
+            @include min-width($screen-sm) {
+                padding-right: 2rem;
+            }
+        }
+
+        @include min-width($screen-sm) {
+            float: left;
+        }
+    }
+
+    .item-link {
+        display: block;
+        color: $darkest_gray;
+        cursor: pointer;
+
+        @include attention { // _box-model.scss
+            @include text-decoration(none);;
+        }
+    }
+
+    .item {
+        margin-bottom: 2rem; // Bottom spacing
+        padding: 1rem; // Reset default styling
+        background-color: $white_gray;
+
+        @include box-shadow-hover; // _box-model.scss
+        
+        &:last-child {
+            @include auto-spacing(margin-bottom);
+        }
+
+        .item-image {
+            height: 20rem;
+            overflow-y: hidden;
+            margin-bottom: 1rem; // Bottom spacing
+        }
+
+        .item-caption {
+            margin-left: 1rem; // Pixel-alignment
+            font-size: 1.4rem;
+            line-height: 2.8rem;
+
+        }
+
+        .item-title {
+            display: block;
+            font-size: 1.7rem;
+            font-weight: $fw-bold;
+        }
+    }
+}
+
+} // End export

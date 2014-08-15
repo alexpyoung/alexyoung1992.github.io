@@ -1,0 +1,92 @@
+//_button.scss
+
+@import '../vendor/sass-import-once';
+@import '../utils/all-utils';
+@import 'icons';
+
+/* See templates/button.mustache for HTML template */
+
+@mixin button-style ($primary-color, $accent-color, $max-width, $icon-top-pos) {
+    max-width: $max-width;
+    border-bottom: 5px solid $accent-color;
+    background-color: $primary-color;
+
+    .button-icon-wrapper {
+        background-color: $accent-color;
+        
+        .button-icon {
+            top: $icon-top-pos;
+            display: block;
+        }
+    }
+}
+
+@include exports ('button') {
+
+%button {
+    height: 7rem;
+    margin: auto;
+    cursor: pointer;
+
+    @include auto-spacing(margin-top);
+    @include auto-spacing(margin-bottom);
+
+    @include attention { // _box-model.scss
+        .button-link {
+            text-decoration: none;
+        }
+    }
+
+    .button-link {
+        display: block;
+    }
+
+    .button-icon-wrapper {
+        height: 6.5rem;
+        width: 7rem;
+    }
+
+    .button {
+        // Positioning hack for adjacent block elements
+        position: relative;
+        top: -6.5rem;
+        left: 3.5rem;
+        display: block;
+        border: none; // Remove default styling
+        margin: 1.7rem auto; // Centering
+        padding: 0; // Remove default styling
+        background-color: transparent; // Remove default styling
+        color: white;
+        font-size: 1.7rem;
+        font-weight: $fw-bold;
+        text-transform: uppercase;
+    }
+}
+
+.button-red {
+    @extend %button;
+    @include button-style($red, #B80019, 288px, 2.25rem);
+}
+
+.button-orange {
+    @extend %button;
+    @include button-style($orange, #BE4419, 307px, 2.75rem);
+}
+
+.button-yellow {
+    @extend %button;
+    @include button-style($yellow, #D5A500, 288px, 2.25rem);
+    // $max-width & $icon-top-pos NOT TESTED
+}
+
+.button-green {
+    @extend %button;
+    @include button-style($green, #2A9856, 285px, 2.25rem);
+}
+
+.button-blue {
+    @extend %button;
+    @include button-style($blue, #1C69AD, 288px, 2.25rem);
+}
+
+} // End export

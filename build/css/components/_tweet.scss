@@ -1,0 +1,58 @@
+// _tweet.scss
+
+@import '../vendor/sass-import-once';
+@import '../utils/all-utils';
+
+@include exports('tweet') {
+
+/* See templates/tweet.mustache for HTML template */
+
+.tweet-list {
+    @include min-width($screen-md) {
+        position: relative;
+        left: 8.5%; // Centering hack
+    }
+
+    .tweet {
+        position: relative;
+        border-bottom: 5px solid $light_gray;
+        margin-bottom: 2rem; // Bottom spacing
+        padding: 1rem 1.5rem;
+        background: white;
+        color: $dark_gray;
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+
+        @include box-shadow-hover; // _box-model.scss
+        @include attention; // _box-model.scss
+
+        &:first-child,   // Left column when
+        &:nth-child(3) { // (width >= $screen-sm)
+            @include min-width($screen-sm) {
+               right: 1rem; // Side spacing
+           }
+        }
+
+        &:nth-child(2), // Right column when
+        &:last-child {  // (width >= $screen-sm)
+            @include min-width($screen-sm) {
+               left: 1rem; // Side spacing
+           }
+        }
+
+        &:last-child {
+            @include auto-spacing(margin-bottom);
+        }
+
+        .quote {
+            font-style: italic; 
+        }
+
+        .info {
+            margin: 0.5rem 0 0; // Pixel-alignment
+            font-size: 1.2rem;
+        }
+    }
+}
+
+} // End export

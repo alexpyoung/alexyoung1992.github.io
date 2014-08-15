@@ -1,0 +1,65 @@
+// _footer.scss
+
+@import '../vendor/sass-import-once';
+@import '../utils/breakpoints';
+@import '../utils/box-model';
+@import '../utils/variables';
+
+@include exports('footer') {
+
+$footer-breakpoint: 60rem;
+
+footer {
+    height: 8rem;
+    background-color: $black_gray;
+    font-size: 1.7rem;
+    text-align: center;
+
+    @include min-width($footer-breakpoint) {
+        height: 15rem;
+    }
+
+    .nav-list {
+        display: none; // Not visible
+        width: 515px; // Fixed width for h-center
+        margin: 0 auto; // Horizontal center
+        padding: 3rem 0 1.5rem 0; // Reset default styling, vertical center
+        font-weight: $fw-bold;
+        text-transform: uppercase;
+        list-style-type: none;
+        
+        @include min-width($footer-breakpoint) {
+            display: block; // Visible
+        }
+
+        .nav-icon {
+            display: none;
+        }
+        
+        .nav-item {
+            display: inline-block;
+            padding: 0 1.5rem;
+
+            @include attention {
+                a {
+                    @include text-decoration(none);
+                }
+            }
+
+            a {
+                color: white;
+            }
+        }
+    }
+
+    .copyright {
+        padding-top: 2.5rem; // Vertical center  
+        color: white;       
+    
+        @include min-width($footer-breakpoint) {
+            padding-top: 1.5rem; // Vertical center  
+        }
+    }
+}
+
+} // End export

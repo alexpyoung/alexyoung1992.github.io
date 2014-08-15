@@ -1,0 +1,184 @@
+@import '../layout/all-layout';
+@import '../components/button';
+@import '../utils/all-utils';
+
+@mixin contact-info($color, $bkgnd-pos-x) {
+    a {
+        color: $color;
+    }
+
+    .contact-logo {
+        background-position: $bkgnd-pos-x 0;
+    }
+}
+
+%contact {
+    @include attention {
+        a {
+            @include text-decoration(none);
+        }
+    }
+
+    .contact-logo {
+        display: inline-block;
+        float: left;
+        width: 5rem;
+        height: 5rem;
+        margin-right: 1.5rem;
+        margin-bottom: 1rem;
+        background: url("../../img/icons/contact-icons.png");
+
+        @include min-width($screen-sm) {
+            margin-bottom: 2rem;
+        }
+
+        @include min-width($screen-lg) {
+            margin-bottom: 4rem;            
+        }                                    
+    }
+
+    .contact-text {
+        display: block;
+        margin-bottom: 3rem;   
+
+        @include min-width($screen-sm) {
+            margin-bottom: 4rem;
+        }   
+
+        @include min-width($screen-lg) {
+            margin-bottom: 6rem;            
+        }    
+    }
+
+    &:last-child {
+        .contact-logo,
+        .contact-text {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.contact-list {
+    list-style-type: none;
+    
+    @include auto-spacing(margin-top);
+    @include auto-spacing(margin-bottom);
+
+    li {
+        display: block;
+        height: 100%;
+    }
+
+    .contact-plug {
+        display: block;
+    }
+
+    .contact-linkedin {
+        @extend %contact;
+        @include contact-info(#007BB6, 0);
+    }
+
+    .contact-github {
+        @extend %contact;
+        @include contact-info(#171516, -50px);
+    }
+
+    .contact-google {
+        @extend %contact;
+        @include contact-info(#DD4A39, -100px);
+    }
+
+    .contact-twitter {
+        @extend %contact;
+        height: 5rem;
+
+        @include contact-info(#5EA9DD, -150px);
+    }
+}
+
+.contact-img {
+    position: relative;
+    float: none;
+    margin-bottom: 0;
+    text-align: right;
+
+    @include width-from(440px, $screen-mini-max) {
+        width: 40rem;
+        margin: 0 auto;
+    }
+
+    @include min-width($screen-sm) {
+        top: 0.5rem;
+        float: left;
+    }
+
+    @include min-width($screen-md) {
+        top: 0;
+    }
+
+    img {
+        @media (max-width: $screen-sm) {
+            max-width: 40rem;
+        }
+    }
+}
+
+.contact-form {
+    .contact-input {
+        margin-bottom: 3rem;
+
+        .contact-label {
+            display: block;
+            color: $dark_gray;
+            font-size: 1.7rem;
+            font-weight: normal;
+        }
+
+        .input {
+            margin-top: 0;
+            padding: 1rem 1.5rem;
+            width: 100%;
+            border: 1px solid $light_gray;
+
+            @include border-radius(0.5rem);
+        }
+
+        textarea.input {
+            height: 15rem;
+            resize: none;
+        }
+    }
+
+    .button-orange {
+        margin-top: 0;
+
+        @include min-width($screen-sm) {
+            margin-right: 0;
+        }
+    }
+}
+
+.contact-cards {
+    @include width-from(440px, $screen-mini-max) {
+        width: 40rem;
+        margin: 0 auto;
+    }
+
+    @include min-width($screen-sm) {
+        margin-top: 8rem;
+    }
+
+    @include min-width($screen-md) {
+        margin-top: 10rem;
+    }
+
+    [class*="contact-card"] {
+        max-width: 40rem;
+    }
+
+    img {
+        &:first-child {
+            margin-bottom: 3rem;
+        }
+    }
+}
