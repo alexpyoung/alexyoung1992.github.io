@@ -17,9 +17,9 @@ handlers:
 #   static_files: robots.txt
 #   upload: robots.txt 
   
-- url: /Alexander\ Young\ -\ Resume.pdf
-  static_files: build/Alexander\ Young\ -\ Resume.pdf
-  upload: build/Alexander\ Young\ -\ Resume.pdf
+- url: /Alexander_Young_Resume.pdf
+  static_files: build/Alexander_Young_Resume.pdf
+  upload: build/Alexander_Young_Resume.pdf
 
 - url: /css
   static_dir: build/css
@@ -29,22 +29,6 @@ handlers:
 
 - url: /js
   static_dir: build/js  
-
-# - url: /partials
-#   static_dir: build/partials
-#   application_readable: true
-
-# - url: /templates
-#   static_dir: build/templates
-#   application_readable: true  
-
-# - url: /utils
-#   static_dir: build/utils
-#   application_readable: true
-
-# - url: /mustache
-#   static_dir: mustache
-#   application_readable: true
 
 - url: /(.*\.(gif|png|jpg|ico|js|css|eot|svg|ttf|woff))
   static_files: \1
