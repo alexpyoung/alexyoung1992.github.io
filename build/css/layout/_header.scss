@@ -2,6 +2,7 @@
 
 @import '../vendor/sass-import-once';
 @import '../utils/all-utils';
+@import '../components/navicons';
 
 @mixin navbar-info($color, $link-selector, $bkgnd-pos-x) {
     border-bottom-color: $color;
@@ -16,7 +17,19 @@
 }
 
 @include exports('header') {
+    .lines-button {
+        position: absolute;
+        top: 0rem;
+        right: -0.8rem;
+        margin: 0;
+        border: none;
 
+        @include attention;
+
+        @include min-width($screen-sm) {
+            display: none;
+        }
+    }
 nav {
     background-color: $black_gray;
     border-bottom: 5px solid $light_gray;
@@ -74,23 +87,7 @@ nav {
             }
         }
 
-        .nav-toggle {
-            position: absolute;
-            top: 0;
-            right: 0;
-            height: 70%;
-            width: 4rem;
-            margin: 0.5rem 0;
-            padding: 0;
-            background: url("../../img/menu-icon.png") #222222 no-repeat 0.5rem;
-            border: none;
-
-            @include attention;
-
-            @include min-width($screen-sm) {
-                display: none;
-            }
-        }
+        
     }
 
     .nav-collapse {
