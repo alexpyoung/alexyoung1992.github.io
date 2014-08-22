@@ -7,10 +7,10 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-        // clean: {
-        //     build: ['build'],
-        //     sass: ['build/css/**/*.scss']
-        // },
+        clean: {
+            build: ['build'],
+            sass: ['build/css/**/*.scss']
+        },
 
         cleanempty: {
             build: {

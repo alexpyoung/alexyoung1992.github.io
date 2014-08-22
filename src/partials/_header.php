@@ -80,8 +80,11 @@ require_once TEMPLATES_PATH.'/buttons.php';
                     <div class="logo">
                         <a href="index.php"></a>
                     </div>
-                    <button class="nav-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    <button class="lines-button x2 collapsed" type="button" role="button" data-toggle="collapse" data-target=".nav-collapse">
+                      <span class="lines"></span>
                     </button>
+                    <!-- <button class="nav-toggle" data-toggle="collapse" data-target=".nav-collapse">
+                    </button> -->
             </div>
             <div class="nav-collapse collapse">
                 <?php require PARTIALS_PATH.'/_nav.php'; ?>

@@ -23,8 +23,7 @@
         font-size: 1.4rem;
         line-height: 2.4rem;
 
-        @include box-shadow-hover; // _box-model.scss
-        @include attention; // _box-model.scss
+        @include box-shadow-helper($light_gray); // _box-model.scss
 
         &:first-child,   // Left column when
         &:nth-child(3) { // (width >= $screen-sm)
