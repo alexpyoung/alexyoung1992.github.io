@@ -7,7 +7,7 @@ require_once TEMPLATES_PATH.'/buttons.php';
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="personal">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">

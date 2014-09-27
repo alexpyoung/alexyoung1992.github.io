@@ -24,8 +24,6 @@
         margin: 0;
         border: none;
 
-        @include attention;
-
         @include min-width($screen-sm) {
             display: none;
         }

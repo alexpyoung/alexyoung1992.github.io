@@ -33,10 +33,7 @@ button.lines-button.collapsed {
     border-radius: $button-size/7;
     top: -2rem;
     right: -1rem;
-    /* */
-    &:hover {
-        opacity: 1;
-    }
+    
     &:active {
         transition: 0;
     }
