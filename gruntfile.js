@@ -7,6 +7,26 @@ module.exports = function (grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
+        notify: {
+            build: {
+                options: {
+                    message: 'Build complete!'
+                }
+            },
+
+            copy: {
+                options: {
+                    message: 'Copy complete!'
+                }
+            },
+
+            'build-sass': {
+                options: {
+                    message: 'SASS build complete!'
+                }
+            }
+        },
+
         clean: {
             build: ['build'],
             sass: ['build/css/**/*.scss']
@@ -72,7 +92,7 @@ module.exports = function (grunt) {
         watch: {
             all: {
                 files: ['src/**', '!**/*.scss'],
-                tasks: ['newer:copy:build']
+                tasks: ['newer:copy:build', 'notify:copy']
             },
 
             sass: {
@@ -83,6 +103,6 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('build-sass', 'Compiles, optimizes, and minifies SASS files', ['sass:build', 'cssmin:build']);
-    grunt.registerTask('build', 'Compiles source files into a build directory', ['newer:copy:build', 'build-sass', 'cleanempty:build', 'watch']);
+    grunt.registerTask('build-sass', 'Compiles, optimizes, and minifies SASS files', ['sass:build', 'cssmin:build', 'notify:build-sass']);
+    grunt.registerTask('build', 'Compiles source files into a build directory', ['newer:copy:build', 'build-sass', 'cleanempty:build', 'notify:build', 'watch']);
 };
