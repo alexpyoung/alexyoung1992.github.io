@@ -7,7 +7,7 @@ require_once PARTIALS_PATH.'/_header.php';
 
 <div class="container">
     <h1>About Me</h1>
-    <div class="blurbs col-xs-12 col-sm-6 col-md-6">
+    <div class="blurbs col-xs-12 col-sm-6 col-md-6 col-lg-5">
         <p class="tagline">
             I’m a web developer based in Laguna Beach, CA with a passion for design and usability.
         </p>
@@ -15,7 +15,7 @@ require_once PARTIALS_PATH.'/_header.php';
             I currently freelance as a full-stack web developer, taking clients from branding and designing their website to deploying a complete, interactive product. I recently graduated from the University of Southern California and am currently looking for work in design and front-end engineering! 
         </p>
     </div>
-    <div class="avatar col-xs-12 col-sm-6 col-md-6">
+    <div class="avatar col-xs-12 col-sm-6 col-md-6 col-lg-7">
         <img src="img/avatar.jpg" alt="Profile Picture Avatar" />
     </div>
 </div>
@@ -39,7 +39,7 @@ require_once PARTIALS_PATH.'/_header.php';
     <div class="fact-hero col-xs-12 col-sm-8">
         <img src="img/macbook@2x.jpg" alt="Macbook" />
     </div>
-    <ul class="fact-list col-xs-12 col-sm-6 col-sm-offset-6">
+    <ul class="fact-list col-xs-12 col-sm-6 col-sm-offset-6 col-lg-5 col-lg-offset-7">
         <li>My favorite cuisine to cook is Italian</li>
         <li>I run long distances here and there</li>
         <li>My topic of choice is the intersection of tech and culture</li>

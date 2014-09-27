@@ -88,17 +88,23 @@
     font-size: 1.8rem;
 }
 
+.blurbs {
+    @include min-width($screen-lg) {
+        line-height: 4rem;
+    }
+}
+
 .avatar {
     text-align: right;
 
     @media (max-width: $screen-mini-max) {
         margin-top: 1rem;
-        margin-left: 9%;
+        // margin-left: 9%;
     }
 
     @include width-from($screen-mini, $screen-mini-max) {
         width: 75%;
-        margin-left: 18%;
+        margin-left: 12.5%;
     }
 
     img {
@@ -189,7 +195,8 @@
     }
 
     @include min-width($screen-lg) {
-        margin-top: -5rem;
+        margin-top: 2rem;
+        margin-bottom: 8rem;
     }
 }
 
@@ -202,5 +209,10 @@
 
     @include min-width($screen-sm) {
         margin-top: -43rem;
+    }
+
+    @include min-width($screen-lg) {
+        margin-top: -53rem;
+        line-height: 4rem;
     }
 }
