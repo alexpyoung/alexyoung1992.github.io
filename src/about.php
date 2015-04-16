@@ -9,10 +9,10 @@ require_once PARTIALS_PATH.'/_header.php';
     <h1>About Me</h1>
     <div class="blurbs col-xs-12 col-sm-6 col-md-6 col-lg-5">
         <p class="tagline">
-            I help make the interwebs. Freelance full-stack web developer with a passion for design and usability.
+            Hi, I'm Alex and I help make the interwebs. Software Engineer at <a href="http://krossover.com">Krossover</a>.
         </p>
         <p class="bio">
-            I'm currently a front-end developer at Krossover. In my spare time, I help take clients from ideation to fully interactive web applications. My gears are always turning and I'm always open to new projects. 
+            I currently do full-stack web development with an eye for design and UX. I also undertake freelance web project in my spare time, helping take clients from ideation to fully interactive web applications.
         </p>
     </div>
     <div class="avatar col-xs-12 col-sm-6 col-md-6 col-lg-7">
