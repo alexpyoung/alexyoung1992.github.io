@@ -12,6 +12,9 @@ build: clean
 serve: clean
 	docker run --rm -ti --publish=${HOST_PORT}:${CONTAINER_PORT} --volume=${SRC}:${DEST} ${IMAGE} jekyll serve
 
+restart:
+	docker restart `docker ps --quiet --filter "ancestor=${IMAGE}"`
+
 clean:
 	rm -rf .sass-cache
 	rm -rf _site
