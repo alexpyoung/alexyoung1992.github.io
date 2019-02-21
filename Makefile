@@ -8,20 +8,23 @@ DEST=/srv/jekyll
 CONTAINER_PORT=4000
 DOCKERD=/Applications/Docker.app
 
-serve: clean install
+serve: clean bootstrap
 	docker run --rm -ti --name=${NAME} --publish=${HOST_PORT}:${CONTAINER_PORT} --volume=${SRC}:${DEST} ${IMAGE} jekyll serve
 
-restart:
+restart: bootstrap
 	docker restart `docker ps --quiet --filter "ancestor=${IMAGE}"`
 
-build: clean install
+build: clean bootstrap
 	docker run --rm -ti --volume=${SRC}:${DEST} ${IMAGE} jekyll build
 
-install:
-	brew -v || /usr/bin/ruby -e `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install`
-	docker -v || brew cask install docker
+clean: bootstrap
+	docker run --rm -ti --volume=${SRC}:${DEST} ${IMAGE} jekyll clean
+
+bootstrap: install-docker
 	[[ `ps aux | grep "${DOCKERD}" | grep -v grep | wc -l` -gt 0 ]] || (open ${DOCKERD} && echo 'Waiting for the Docker daemon to start' && sleep 30)
 
-clean:
-	rm -rf .sass-cache
-	rm -rf _site
+install-docker: install-homebrew
+	docker -v || brew cask install docker
+
+install-homebrew:
+	brew -v || /usr/bin/ruby -e `curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install`
