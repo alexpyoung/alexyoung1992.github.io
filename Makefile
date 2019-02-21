@@ -1,5 +1,6 @@
 VERSION=3.8
 IMAGE=jekyll/jekyll:${VERSION}
+NAME=alexpyoung.github.io
 SRC=`pwd`
 HOST_PORT=4000
 
@@ -8,7 +9,7 @@ CONTAINER_PORT=4000
 DOCKERD=/Applications/Docker.app
 
 serve: clean install
-	docker run --rm -ti --publish=${HOST_PORT}:${CONTAINER_PORT} --volume=${SRC}:${DEST} ${IMAGE} jekyll serve
+	docker run --rm -ti --name=${NAME} --publish=${HOST_PORT}:${CONTAINER_PORT} --volume=${SRC}:${DEST} ${IMAGE} jekyll serve
 
 restart:
 	docker restart `docker ps --quiet --filter "ancestor=${IMAGE}"`
