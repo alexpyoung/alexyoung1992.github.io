@@ -1,3 +1,14 @@
+body {
+    margin: 0;
+    font-family: 'Roboto Slab', serif;
+    color: #303030;
+}
+
+h1 {
+    font-size: 9vw;
+    font-weight: bold;
+}
+
 .root {
     display: grid;
     grid-template-columns: auto 80% auto;
@@ -34,12 +45,8 @@
     width: 40px;
 }
 
-h1 {
-    /* font-size: 2em; */
-}
-
-body {
-    margin: 0;
-    font-family: 'Roboto Slab', serif;
-    color: #303030;
+@media (min-width: 375px) {
+  h1 {
+     font-size: 2em;
+  }
 }
