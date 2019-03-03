@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>{{ site.title }}</title>
+        <link rel="stylesheet" href="/styles/styles.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    </head>
+    <body class="root">
+        <div class="content">
+            <img class="avatar" src="/assets/avatar.jpg" />
+            <h1>Hi, I'm Alex Young</h1>
+            <div class="links">
+                <a href="mailto:{{ site.email }}" target="blank">
+                    <img class="link" src="/assets/email.svg" />
+                </a>
+                <a href="{{ site.github }}" target="blank">
+                    <img class="link" src="/assets/github.svg" />
+                </a>
+                <a href="{{ site.twitter }}" target="blank">
+                    <img class="link" src="/assets/twitter.svg" />
+                </a>
+                <a href="{{ site.linkedin }}" target="blank">
+                    <img class="link" src="/assets/linkedin.svg" />
+                </a>
+            </div>
+        </div>
+    </body>
+</html>
