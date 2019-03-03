@@ -8,4 +8,5 @@ twitter: https://twitter.com/alexpyoung
 markdown: kramdown
 theme: minima
 sass:
+    sass_dir: styles
     style: compressed
