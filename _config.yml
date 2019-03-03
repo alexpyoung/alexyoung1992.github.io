@@ -7,3 +7,5 @@ twitter: https://twitter.com/alexpyoung
 
 markdown: kramdown
 theme: minima
+sass:
+    style: compressed

@@ -1,3 +1,6 @@
+---
+---
+
 body {
     margin: 0;
     font-family: 'Roboto Slab', serif;
@@ -7,30 +10,44 @@ body {
 h1 {
     font-size: 9vw;
     font-weight: bold;
+
+    @media (min-width: 375px) {
+        font-size: 2em;
+    }
 }
 
 .root {
     display: grid;
     grid-template-columns: auto 80% auto;
+    align-items: start;
+    justify-items: center;
     width: 100vw;
-    height: 100vh;
-    place-items: center;
     background-color: #EFEFEF;
+
+    @media (min-width: 500px) {
+        align-items: center;
+        height: 100vh;
+    }
 }
 
 .content {
     grid-column-start: 2;
     grid-column-end: 3;
     display: grid;
+    grid-row-gap: 50px;
     grid-template-rows: auto 50px;
     place-items: center;
-    grid-row-gap: 50px;
+    margin-top: 50px;
+
+    @media (min-width: 500px) {
+        margin-top: 0px;
+    }
 }
 
 .avatar {
-    border-radius: 50%;
     width: 100%;
     max-width: 280px;
+    border-radius: 50%;
 }
 
 
@@ -43,10 +60,4 @@ h1 {
 .link {
     height: 40px;
     width: 40px;
-}
-
-@media (min-width: 375px) {
-  h1 {
-     font-size: 2em;
-  }
 }
