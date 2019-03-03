@@ -59,7 +59,11 @@ h1 {
 .links {
     display: grid;
     grid-auto-flow: column;
-    grid-column-gap: $icon-size;
+    grid-column-gap: 4vh;
+
+    @media (min-width: $non-mobile) {
+        grid-column-gap: $icon-size;
+    }
 }
 
 .link {
