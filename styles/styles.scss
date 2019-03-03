@@ -3,6 +3,10 @@
 
 @import 'overrides';
 
+$non-mobile: 500px;
+$spacing: 50px;
+$icon-size: 40px;
+
 body {
     font-family: 'Roboto Slab', serif;
     color: #303030;
@@ -25,7 +29,7 @@ h1 {
     width: 100vw;
     background-color: #EFEFEF;
 
-    @media (min-width: 500px) {
+    @media (min-width: $non-mobile) {
         align-items: center;
         height: 100vh;
     }
@@ -35,12 +39,12 @@ h1 {
     grid-column-start: 2;
     grid-column-end: 3;
     display: grid;
-    grid-row-gap: 50px;
+    grid-row-gap: $spacing;
     grid-template-rows: auto 50px;
     place-items: center;
-    margin-top: 50px;
+    margin-top: $spacing;
 
-    @media (min-width: 500px) {
+    @media (min-width: $non-mobile) {
         margin-top: 0px;
     }
 }
@@ -55,10 +59,10 @@ h1 {
 .links {
     display: grid;
     grid-auto-flow: column;
-    grid-column-gap: 40px;
+    grid-column-gap: $icon-size;
 }
 
 .link {
-    height: 40px;
-    width: 40px;
+    height: $icon-size;
+    width: $icon-size;
 }
