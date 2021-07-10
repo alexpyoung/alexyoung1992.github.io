@@ -21,19 +21,20 @@ photos:
     - /assets/photos/LimekilnCreekBridge.jpg
     - /assets/photos/Brian.jpg
     - /assets/photos/JudasTree.jpg
+    - /assets/photos/Polygons.jpg
     - /assets/photos/NanLien.jpg
-    - /assets/photos/WTC.JPG
     - /assets/photos/HalfDome0.jpg
+    - /assets/photos/Roscoe.jpg
     - /assets/photos/Malecon.jpg
     - /assets/photos/Sarah.jpg
-    - /assets/photos/Roscoe.jpg
     - /assets/photos/KipsBay.jpg
     - /assets/photos/Bee.jpg
     - /assets/photos/Trinidad.jpg
-    - /assets/photos/Rain.jpg
     - /assets/photos/PfiefferBeach.jpg
-    - /assets/photos/Matt.jpg
     - /assets/photos/PuentedeBacunayagua.jpg
+    - /assets/photos/Rain.jpg
+    - /assets/photos/Matt.jpg
+    - /assets/photos/WTC.JPG
 
 markdown: kramdown
 theme: minima
